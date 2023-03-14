@@ -1,0 +1,580 @@
+--las rutas en laravel estan en ROUTES
+
+--Solucion error 500 y llave, error al ejecutar aritisan
+https://es.stackoverflow.com/questions/283568/error-500-internal-server-error-laravel
+otra solucion comando cuando no existe vendor
+composer install --ignore-platform-reqs
+
+
+--asi se declaran rutas, laravel imprime en cascada, primero lo primero
+
+Route::get('/', function () {
+    // return view('welcome');
+    return "Bienvenido";
+});
+
+Route::get('cursos', function () {
+    return "Bienvenido a cursos";
+});
+
+Route::get('cursos/{curso}', function ($curso) {
+    return "Bienvenido a cursos $curso";
+});
+
+--Crear un controlador, se encarga lo que se debe mostrar al usuario
+--los controladores estan ubicados en app/http/controllers
+un controlador se crea asi desde linea de comandos:
+php artisan make:controller HomeController
+
+Asignar un controlador a una rutas, esto se hace en web.php
+
+Route::get('/', HomeController::class);
+use App\Http\Controllers\HomeController;
+
+
+y en el controlador va esto 
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class HomeController extends Controller
+{
+    public function __invoke(){
+        return "Bienvenido desde el controlador home";
+    }
+}
+
+--Cuando es una sola ruta se utiliza el metodo __invoke
+public function __invoke(){
+    return "Bienvenido desde el controlador home";
+}
+--cuando es para varias rutas la sintaxis es asi 
+en curso controller 
+class CursoController extends Controller
+{
+    public function index(){
+        return "Bienvenido a cursos";
+    }
+
+    public function create(){
+        return "Bienvenido a crear cursos";
+    }
+
+    public function show($curso){
+        return "Bienvenido a cursos $curso ";
+    }
+}
+
+en web php
+Route::get('cursos', [CursoController::class, 'index']);
+Route::get('cursos/create', [CursoController::class, 'create']);
+Route::get('cursos/{curso}', [CursoController::class, 'show']);
+
+
+//grupo de rutas
+
+Route::controller(CursoController::class)->group(function(){
+    Route::get('cursos', 'index');
+    Route::get('cursos/create', 'create');
+    Route::get('cursos/{curso}', 'show');
+});
+
+--vistas en los controladores
+las vistas se almacenan en resorces/views
+
+
+
+para crear una plantilla y que se refleje en todas las hojas de html se pone
+en el nombre del documento .blade.php 
+
+la plantilla va en layouts y se define <aside><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title')</title>
+    <!-- css -->
+</head>
+<body>
+    @yield('content')
+</body>
+</html></aside>
+
+ahora si en cara hoja de php lo que ponemos es la referencia de nuestra plantilla
+@extends('layouts.plantilla') -> referencia plantilla
+
+@section('title', 'Home') -> nombre de nuiestra pestaña
+
+@section('content')
+    <h1>Bienvenido desde a index</h1>
+@endsection
+
+
+--Para conectarme a una base de datos se hace en config-database.php
+
+para colocar credenciales de la bd se las coloca en database.php pero por seguridad estos datos son asignados en el archivo 
+.env
+DB_CONNECTION es igual al valor de quede tener en el archivo .env, si esta variable no existe por defecto se pone mysql
+env('DB_CONNECTION', 'mysql')
+
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=blog
+DB_USERNAME=root
+DB_PASSWORD=12345
+
+--en laravel existe migraciones, que sirve para el versionamiento de la base de datos
+cada cambio que se hace en base de datos queda registrado en database/migrations
+
+public function up(): void//crea tabla
+{
+    // users: nombre de la tabla
+    // Blueprint: crea las columnas de la tabla
+    Schema::create('users', function (Blueprint $table) {
+        $table->id();//integuer unsigned incremend
+        $table->string('name', 150);//varchar 150 caracteres
+        $table->string('email')->unique();//dato unico
+        $table->timestamp('email_verified_at')->nullable();//guardar fechas, al realizar el registro se anula
+        $table->string('password');
+        $table->rememberToken();//genera un token de hasta si 100 caracteres
+        $table->timestamps();//almacena fecha y hora que se registra
+    });
+}
+
+/**
+ * Reverse the migrations.
+ */
+public function down(): void//revierte los cambios, rollback
+{
+    Schema::dropIfExists('users');
+}
+
+
+
+--PARA CREAR UNA MIGRACION SE EJECUTA EL comandos
+php artisan make:migration cursos
+
+php artisan migrate  
+
+REALIZAR UN ROLLBACK A UNA MIGRACION QUE SALIO MAL
+php artisan migrate:rollback
+
+
+crear una tabla de otra manera, donde desde el comando crea una tabla con las dos funciones
+que se necesita ademas crea el id y el timestamps
+php artisan make:migration create_cursos_table
+
+
+Para agregar una colunma a una tabla que ya existe, se debe refrescar todo
+y esto vuelve borra todo y crea de nuevo, esto borrara todos los registros
+NO EJECUTAR---------------------------SOLO CUANDO ESTE EN DESARROLLO
+php artisan migrate:fresh
+
+MODIFICAR TABLAS sin ser destructivo, este comando crea la estructura solo se debe agregar el campo nuevo
+que va a ir en la tabla que se referencia en el comando
+        php artisan make:migration add_avatar_to_users_table
+y luego ejecutamos migracion para correr todos los scrips
+        php artisan migrate
+
+ELIMINAR TODAS LAS TABLAS 
+    php artisan migrate:reset
+
+ubicar una tabla despues de una columna especifica
+    $table->string('avatar')->nullable()->after('email');
+
+cambiar estructura en los campos, se realiza atraves de un comando
+
+    composer require doctrine/dbal
+si sale error revisar el php.ini que este esta linea sin punto y coma 
+extension=fileinfo
+
+el comando ejecuta el archivo migrations y ejecuyta uno a uno los archivos alojados ahi, solo la funcion up
+ademas se crea una tabla que lleva el registro de las migraciones que se ha realizado
+si sale error al ejecutar el comando hay que revizar en XAMPP el php init
+
+Soy usuario de Windows y XAMPP. Lo que funciona para mí es agregar extension=php_pdo_mysql.dlltanto php.iniXAMPP php.inicomo C:\php\php.ini.
+
+Ejecute este comando en su cmd para saber dónde está su archivo de configuración
+
+php -i | find /i "Configuration File
+
+
+
+# ------------------------------------------------------------
+ELOQUENT orm
+crud con registros utyilizando el orm de eloquent
+ORM es el manejo de objetos
+
+Para cada tabla debe existir en modelo
+
+PARA CREAR UN MODELO ES ASI, LOS MODELOS ESTAN ALAMACENADOS EN LA RUTA app/models
+    php artisan make:model Curso
+
+
+PARA REALIZAR INSERCIONES DE DATOS SIN TENER FORMULARIOS O UNA ESTRUCTURA COMO TAL,
+existe tinker, que permite hacer todo esto desde linea de comandos
+    php artisan tinker
+
+se debe crear un objeto y conectarse al modelo que se creo
+use App\Models\Curso.php;
+$curso = new Curso; // se crea un objeto de tipo curso
+$curso->name = 'Laravel';//se aggrega un valor a name 
+$curso->descripcion = 'Iniciando con laravel';//un valor a descripcion
+$curso->save();//se guarda los cambios para vizualizarlo en BD
+
+Para modificar, se declara el el mismo objeto
+$curso->descripcion = 'Iniciando con laravel - 2023';
+
+
+
+------------------------------------------------
+SEEDERS, llenar tablar con datos de pruebas, utilizando factories de laravel
+
+Esto utiliza los objeto, se agrega uno en seeders asi
+$curso2 = new Curso(); // se crea un objeto de tipo curso2
+$curso2->name = 'Vue';//se aggrega un valor a name 
+$curso2->descripcion = 'Iniciando con vue';//un valor a descripcion
+$curso2->categoria = 'Desarrollo web con vue';//un valor a descripcion
+$curso2->save();/
+
+luego se realiza la ejecucion del seed
+con el siguiente comando 
+    php artisan db:seed
+Crear un seeder
+    php artisan make:seeder CursoSeeder
+
+
+    // $curso = new Curso(); // se crea un objeto de tipo curso
+        // $curso->name = 'Laravel';//se aggrega un valor a name 
+        // $curso->descripcion = 'Iniciando con laravel';//un valor a descripcion
+        // $curso->categoria = 'Desarrollo web';//un valor a descripcion
+        // $curso->save();
+
+        // $curso2 = new Curso(); // se crea un objeto de tipo curso2
+        // $curso2->name = 'VUE';//se aggrega un valor a name 
+        // $curso2->descripcion = 'Iniciando con VUE';//un valor a descripcion
+        // $curso2->categoria = 'Desarrollo web CON VUE';//un valor a descripcion
+        // $curso2->save();
+--------------------------------------------------
+
+LOS FACTORIS ES UN MECANISMO QUE LLENA DE MANERA AUTOMATICA REGISTROS
+
+
+El comando para crear un factori es
+    php artisan make:factory CursoFactory
+estos se cream en la ruta database/factories
+por convencion y que de una vez se asigne el modelo que va estar relacionado se agrega esto
+php artisan make:factory CursoFactory --model=Curso
+
+en el factory va esto 
+public function definition(): array
+{
+    return [
+        'name' => fake()->name(),
+        'descripcion' => fake()->paragraph(), 
+        'categoria' => fake()->randomElement(['Desarrollo web', 'Diseño web']) 
+    ];
+}
+los campos que se desea llenar automatico
+
+y en el seeder para que ejecute el factory y que llene el numero de registros
+que uno quiera ruta del documento database/seeders/databaseseeders
+
+        Curso::factory(50)->create();
+        User::factory(10)->create();
+
+
+---------------------------------------------------------------------------
+Utilizacion de consultas con tinker 
+
+Primero nos conectamos a tinker
+    php artisan tinker
+De aqui nos conectamos al modelo que administra la tabla
+    use App\Models\Curso;
+Creamos un objeto que me traiga todos los elementos de esta tabla
+    $cursos = Curso::all();
+si se desea recorrer esto se podria hacer con un for 
+
+
+CONSULTA CON RESTRICCION, Solo datos que tengan desarrollo web,
+por defecto los ordena de manera asendente
+    $cursos = Curso::where('categoria','Diseño web')->get();
+ORDEN DE MANERA DESENDENTE
+    $cursos = Curso::where('categoria','Diseño web')->orderBy('id','desc')->get();
+ORDEN DE MANERA ASENDENTE
+    $cursos = Curso::where('categoria','Diseño web')->orderBy('name','asc')->get();
+PRIMER CAMPO
+    $cursos = Curso::where('categoria','Diseño web')->orderBy('name','asc')->first();
+Solo traer nombre y descripcion
+    $cursos = Curso::select('name', 'descripcion')->get();
+
+Colocar alias a las columnmas
+    $cursos = Curso::select('name as nombre', 'descripcion as desc')->get();
+LImit con take
+    $cursos = Curso::select('name as nombre', 'descripcion as desc')->take(5)->get();
+
+Buscar un id con eloquet
+    $cursos = Curso::find(3);
+Consulta mayores a
+    $cursos = Curso::where('id','>', 45)->get();
+Like con elowuen
+    $cursos = Curso::where('id','like', '%volupta%')->get();
+
+------------------------------------------------------------------------------
+Mutadores, transformar el texto antes de guardar, ejemplo de mayusculas y guardar el registro en minusculas
+
+esta funcion va en App\models\user.php que es el adminsitrador de la tabla usur
+protected function name(): Attribute {
+    return new Attribute(
+        get: function($value){
+            return ucwords($value);
+        },
+        set: function($value) {
+            return strtolower($value);
+        }
+    );
+} 
+
+
+cuando consultemos con get el nombre lo trae con la primera lectra en mayuscula
+get: function($value){
+    return ucwords($value);
+},
+
+
+FUNCION FLECHA EN PHP
+get: fn($value) => ucwords($value),
+set: fn($value) => strtolower($value)
+
+
+
+---------------------------------------------------------------------------
+listar y leer registros
+desde el controlador se envia el objeto la ruta es app\http\controller   \y el controlador
+
+en el controlador se tiene el objeto de datos, y se los asigna a una variable, la variable se la envia a 
+la vissta
+        $cursos = Curso::all();
+        return view('cursos.index', compact('cursos')); 
+
+en la vista se la resive asi y se la imprime asi
+como es archivo blade se puede utilizar foreach asi
+    <ul>
+        @foreach ($cursos as $curso)
+           <li>{{$curso->name}}</li> 
+        @endforeach
+    </ul>
+    
+si los registros son muchos, entonces se hace paginacion
+    $cursos = Curso::paginate();//solo se imprimen 15 registros, enb la url se pone?page2
+en la vista se agrega el link y crea un paginador con el total de paginas,
+para que se vea bien se agrega tailwind con el cdn
+    <ul>
+        @foreach ($cursos as $curso)
+           <li>{{$curso->name}}</li> 
+        @endforeach
+    </ul>
+    {{$cursos->links()}}  o tambie {!! $cursos->render() !!}mejor------------
+----------------------------------------------
+Para crear botones con rutas, lo que se hace es que a las rutas se les de un nombre
+identificativo
+    <a href="{{route('cursos.create')}}">Crear cursos</a>
+    Route::get('cursos/create', [CursoController::class, 'create'])->name('cursos.create');// A LA RUTA LE DATOS UN NOMBRE
+
+al show se le envia el id, con el id se le manda el objeto con la informacion de ese id
+en el controlador de cursos , se buscon con find y se manda el objeto
+public function show($id){
+    // return view('cursos.show', ['curso'=> $curso]);
+    $curso = Curso::find($id);
+    return view('cursos.show', compact('curso'));
+}
+
+
+--------------------------------------------------------
+
+PARA MANDAR A GUARDAR LOS DATOS DE UN FORMULARIO, SE DEBE CREAR UNA RUTA
+QUE VA a enviar los datos por medio de post
+
+Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store');//ruta de almacenar datos
+
+crearmos la funcion en el controlador y creamos lo que debe hacer, en el atributo request 
+llegan los datos del formulario, ademas en el formulario se coloca este valor por seguridad 
+    @csrf
+public function store(Request $request){
+    $curso = new Curso();
+    $curso->name = $request->name;
+    $curso->descripcion = $request->descripcion;
+    $curso->categoria = $request->categoria;
+
+    $curso->save();
+
+    return redirect()->route('cursos.show', $curso->id);//redireccionar a una pagina
+}
+
+
+----------------------------------------------------------
+PARA ACTUALIZAR SE HACE LO MISMO SE CREA UNA RUTA, Y ESTA RUTA ES DE TIPO PUT 
+Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('cursos.update');//ruta de actualizar datos
+
+Y EN EL CONTROLADOR RECIBIMOS EL OBJETO
+public function update(Request $request, $curso ){
+    // return view('cursos.show', ['curso'=> $curso]);
+    $curso = new Curso();
+    $curso->name = $request->name;
+    $curso->descripcion = $request->descripcion;
+    $curso->categoria = $request->categoria;
+
+    $curso->save();
+    return redirect()->route('cursos.show', $curso->id);//redireccionar a una pagina
+}
+
+
+--------------------------------
+validar datos vacios en el controlador al crear datos
+public function store(Request $request){
+    //VALIDACION DE CAMPOS VACIOS
+    $request->validate([
+        'name' => 'required',
+        'descripcion' => 'required',
+        'categoria' => 'required'
+    ]);
+------------------------------------
+
+Para mostrar los mensajes en español se debe buscar el repositorio en google
+laravel en español y copiar los archivos de /resource/lang/es
+luego en app.php se debe modificar la localidad de en a es
+
+con blade se puede indicar el error como condicion en los formulariuos
+    @error('name')
+            <br>
+            <small>*{{$message}}</small>
+        @enderror
+
+validar un nombre de etiqueta por otro
+        'attributes' => [
+            'name' => 'nombre'
+        ],
+
+Cuando los campos son vacios pero, un campo si se lleno correctamente y no se desea que se borren los datos
+de todos los inputs, se coloca esta propiedad en el value de cada input
+
+value="{{old('categoria')}}" 
+
+
+--------------------------------------------
+Crearun request 
+php artisan make:request StoreCurso
+
+Los roles y permisos
+
+
+METODO PARA PERSONALIZAR MENSAJES DE ERROR
+public function attributes()
+    {
+        return[
+            'name'=>'nombre del curso',
+        ];
+    }
+
+    ---------------------------------
+
+
+asignacion masiva
+
+
+class Curso extends Model
+{
+    use HasFactory;
+    // protected $fillable = ['name', 'descripcion', 'categoria'];//guarda los datos que uno quiere
+    protected $guarded = ['status'];//guarda los campos que uno no quiere
+    // protected $table = "Curso"; //se agrega para apuntar una tabla y poderla administrar
+}
+
+
+
+--------------------------------------------
+ELIMINAR UN REGISTRO
+
+EN SHOW CREO UN BOTONM
+<form action="{{route('cursos.delete',$curso)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form>
+
+    EN EL CONTROLADOR SE CREA LA FUNCION
+    public function delete(Curso $curso ){
+
+        $curso->delete();
+        return redirect()->route('cursos.index');//redireccionar a una pagina
+    }
+
+    
+    EN LA RUTA LA RUTA
+    Route::delete('cursos/{curso}', [CursoController::class, 'delete'])->name('cursos.delete');
+
+-----------------------------------------
+
+VISUALIZAR RUTAS DESDE COMNADO
+php artisan r:l
+
+DEFINIR RUTAS DE MANERA MAS OPTIMA, con esta linea se crean todas las rutas
+los nombre se ponen por convencion de laravel
+Route::resource('cursos',CursoController::class);
+
+
+ajustar los nombres de ruta como uno quiere
+public function boot(): void
+    {
+        Route::resourceVerbs([
+            'create' => 'crear',
+            'edit' => 'editar',
+            'destroy' => 'delete',
+        ]);
+    }
+
+CAMBIAR EL NOMBRE DE LA RUTA CURSOS POR ASIGNATURA
+Route::resource('asignatura',CursoController::class)->names('cursos');
+
+Para cambiar el nombre del objeto 
+Route::resource('asignatura',CursoController::class)->parameters(['asignatura'=>'curso'])->names('cursos');
+
+
+
+---------------------
+URLS AMIGABLES
+-----------------------
+ENVIO DE EMAILS
+
+En la ruta conf/mail.php esta la configuracion de nuestro servicio 
+smp, como estos datos son sensibles entonces se los pone en el archivo .env
+
+Para comenzar en desarrollo lo debemos hacer en mailtrap
+Ya configuradas las credenciales, se debe crear un maillable por comandos
+
+    php artisan make:mail ContactameMailable
+
+Y este crea un archivo en app, mail, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
