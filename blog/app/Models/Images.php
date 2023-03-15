@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Images extends Model
 {
     use HasFactory;
+
+    //Relacion muchos a muchos
+    public function imageable(){
+        return $this->morphTo();
+    }
 }
