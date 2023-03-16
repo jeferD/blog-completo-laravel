@@ -20,7 +20,7 @@ class ImagesFactory extends Factory
     {
 
         return [
-            'url' => 'posts/'.fake()->imageUrl(640, 480, null, false)
+            'url' =>fake()->imageUrl(640, 480, null, false)
         ];
     }
 }
