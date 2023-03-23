@@ -6,7 +6,9 @@ use App\Http\Controllers\PostController;
 
 
 
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
+Route::get('/category/{category}', [PostController::class, 'category'])->name('posts.category');
 
 Route::middleware([
     'auth:sanctum',
