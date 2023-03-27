@@ -3,16 +3,16 @@ UPDATE blog_final.images
 	SET url='https://www.freepngimg.com/thumb/rose/1-2-rose-png.png'
 	WHERE id=2;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=3;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=4;
 UPDATE blog_final.images
 	SET url='https://www.freepngimg.com/thumb/rose/1-2-rose-png.png'
 	WHERE id=5;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=6;
 UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
@@ -21,7 +21,7 @@ UPDATE blog_final.images
 	SET url='https://www.freepngimg.com/thumb/rose/1-2-rose-png.png'
 	WHERE id=8;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=9;
 UPDATE blog_final.images
 	SET url='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
@@ -45,7 +45,7 @@ UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
 	WHERE id=16;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=17;
 UPDATE blog_final.images
 	SET url='https://www.freepngimg.com/thumb/rose/1-2-rose-png.png'
@@ -54,7 +54,7 @@ UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
 	WHERE id=19;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=20;
 UPDATE blog_final.images
 	SET url='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
@@ -81,13 +81,13 @@ UPDATE blog_final.images
 	SET url='https://www.pexels.com/photo/scenic-view-of-landscape-248797/'
 	WHERE id=28;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=29;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=30;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=31;
 UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
@@ -96,7 +96,7 @@ UPDATE blog_final.images
 	SET url='https://www.freepngimg.com/thumb/rose/1-2-rose-png.png'
 	WHERE id=33;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=34;
 UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
@@ -108,7 +108,7 @@ UPDATE blog_final.images
 	SET url='https://www.pexels.com/photo/scenic-view-of-landscape-248797/'
 	WHERE id=37;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=38;
 UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
@@ -117,46 +117,46 @@ UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
 	WHERE id=40;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=41;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=43;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=44;
 UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
 	WHERE id=45;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=46;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=47;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=48;
 UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
 	WHERE id=49;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=50;
 UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
 	WHERE id=51;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=52;
 UPDATE blog_final.images
 	SET url='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
 	WHERE id=53;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=54;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=55;
 UPDATE blog_final.images
 	SET url='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
@@ -168,82 +168,82 @@ UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
 	WHERE id=58;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=59;
 UPDATE blog_final.images
 	SET url='https://www.pexels.com/photo/scenic-view-of-landscape-248797/'
 	WHERE id=60;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=61;
 UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
 	WHERE id=62;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=63;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=64;
 UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
 	WHERE id=65;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=66;
 UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
 	WHERE id=67;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=68;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=69;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=70;
 UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
 	WHERE id=71;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=72;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=73;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=74;
 UPDATE blog_final.images
 	SET url='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
 	WHERE id=75;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=76;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=77;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=78;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=79;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=80;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=81;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=82;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=83;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=84;
 UPDATE blog_final.images
 	SET url='https://www.pexels.com/photo/scenic-view-of-landscape-248797/'
@@ -252,13 +252,13 @@ UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
 	WHERE id=86;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=87;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=88;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=89;
 UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
@@ -270,10 +270,10 @@ UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
 	WHERE id=92;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=93;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=94;
 UPDATE blog_final.images
 	SET url='https://www.pexels.com/photo/scenic-view-of-landscape-248797/'
@@ -282,16 +282,16 @@ UPDATE blog_final.images
 	SET url='https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg'
 	WHERE id=96;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=97;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=98;
 UPDATE blog_final.images
-	SET url='https://www.w3schools.com/images/w3schools_green.jpg'
+	SET url='https://images.unsplash.com/photo-1679926820630-bb34ce597056?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
 	WHERE id=99;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=100;
 
 
@@ -299,50 +299,50 @@ UPDATE blog_final.images
 
 --  Auto-generated SQL script #202303222106
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=17;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=20;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=30;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=31;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=43;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=46;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=48;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=50;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=52;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=55;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=63;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=69;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=74;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=80;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=89;
 UPDATE blog_final.images
-	SET url='https://images.unsplash.com/photo-1525253086316-5a810fda9665'
+	SET url='https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528_1280.jpg'
 	WHERE id=98;
