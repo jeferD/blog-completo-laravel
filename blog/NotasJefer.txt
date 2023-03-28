@@ -583,3 +583,5 @@ storage/app/public
 
 
 
+LARAVEL COLLECTIVE
+rellena los campos si la consulta no se pudo finalizar
