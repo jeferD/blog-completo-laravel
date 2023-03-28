@@ -32,6 +32,9 @@ Route::get('/', HomeController::class);
 use App\Http\Controllers\HomeController;
 
 
+CONTROLADOR CON LOS 7 METODOS DE UN CRUD
+php artisan make:controller Admin/CategoryController -r 
+
 y en el controlador va esto 
 <?php
 
