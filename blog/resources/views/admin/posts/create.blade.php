@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar Categoria</h1>
+    <h1>Crear Categoria</h1>
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
     <div class="card">
         <div class="card-body"> 
             {{-- esta es sintaxis de laravel collection, que se instalo por medio de compouser --}}
-            {!! Form::model($category, ['route' => ['admin.categories.update', $category], 'method'=>'put']) !!}
+            {!! Form::open(['route' => 'admin.categories.store']) !!}
                 <div class="form-group">
                     {!! Form::label('name', 'Nombre', []) !!}
                     {!! Form::text('name', null, ['class'=> 'form-control', 'placeholder'=>'Ingrese el nombre de la categoria']) !!}
@@ -33,7 +33,7 @@
                     @enderror
                 </div>
 
-                {!! Form::submit('Actualizar Categoria', ['class'=>'btn btn-primary']) !!}
+                {!! Form::submit('Crear Categoria', ['class'=>'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>

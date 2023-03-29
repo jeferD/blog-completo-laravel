@@ -15,7 +15,7 @@
     <div class="card">
         <div class="card-body"> 
             {{-- esta es sintaxis de laravel collection, que se instalo por medio de compouser --}}
-            {!! Form::model($category, ['route' => ['admin.categories.update', $category], 'method'=>'put']) !!}
+            {!! Form::model($post, ['route' => ['admin.pots.update', $post], 'method'=>'put']) !!}
                 <div class="form-group">
                     {!! Form::label('name', 'Nombre', []) !!}
                     {!! Form::text('name', null, ['class'=> 'form-control', 'placeholder'=>'Ingrese el nombre de la categoria']) !!}

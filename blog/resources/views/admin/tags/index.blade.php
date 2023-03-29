@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Listar Categoria</h1>
+    <h1>Listar Tags</h1>
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <a class="btn btn-primary btn-sm" href="{{route('admin.categories.create')}}">Crear Categoría</a>
+            <a class="btn btn-primary btn-sm" href="{{route('admin.tags.create')}}">Crear Tag</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -28,13 +28,14 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($categories as $category)
+                    {{-- tags es el que llega por medio del controlador --}}
+                    @foreach ($tags as $tag)
                         <tr>
-                            <td>{{$category->id}}</td>
-                            <td>{{$category->name}}</td> 
-                            <td width='10px' ><a class="btn btn-primary btn-sm" href="{{route('admin.categories.edit', $category)}}">Editar</a></td>
+                            <td>{{$tag->id}}</td>
+                            <td>{{$tag->name}}</td> 
+                            <td width='10px' ><a class="btn btn-primary btn-sm" href="{{route('admin.tags.edit', $tag)}}">Editar</a></td>
                             <td width='10px'>
-                                <form action="{{route('admin.categories.destroy',$category )}}" method="POST">
+                                <form action="{{route('admin.tags.destroy',$tag )}}" method="POST">
                                     @csrf
                                     @method('delete')
 

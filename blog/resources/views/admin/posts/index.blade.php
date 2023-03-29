@@ -15,7 +15,7 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <a class="btn btn-primary btn-sm" href="{{route('admin.categories.create')}}">Crear Categoría</a>
+            <a class="btn btn-primary btn-sm" href="{{route('admin.posts.create')}}">Crear Categoría</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -28,13 +28,13 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($categories as $category)
+                    @foreach ($posts as $post)
                         <tr>
-                            <td>{{$category->id}}</td>
-                            <td>{{$category->name}}</td> 
-                            <td width='10px' ><a class="btn btn-primary btn-sm" href="{{route('admin.categories.edit', $category)}}">Editar</a></td>
+                            <td>{{$post->id}}</td>
+                            <td>{{$post->name}}</td> 
+                            <td width='10px' ><a class="btn btn-primary btn-sm" href="{{route('admin.posts.edit', $post)}}">Editar</a></td>
                             <td width='10px'>
-                                <form action="{{route('admin.categories.destroy',$category )}}" method="POST">
+                                <form action="{{route('admin.posts.destroy',$post )}}" method="POST">
                                     @csrf
                                     @method('delete')
 
